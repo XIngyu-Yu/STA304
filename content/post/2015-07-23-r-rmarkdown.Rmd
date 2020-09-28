@@ -1,0 +1,27 @@
+---
+title: "Analysis on the use of plastic straws and willingness to change"
+author: "Xingyu Yu"
+date: 2015-07-23T21:13:14-05:00
+categories: ["R"]
+bibliography:"references"
+tags: ["R Markdown", "plot", "regression"]
+---
+
+code and data supporting this analysis is available at: https://github.com/XIngyu-Yu/STA304
+
+We use R @citeR and ggplot @ggplot2 for the analysis.
+
+I manually download dataset and then read it in from a local file. 
+
+#Abstract:
+
+we have explored the data of feedback on how to reduce plastic straws. As long as the topic about climate change has brought to people's attention, finding approaches to reduce single-use items is very important.
+
+#introduction
+Single-use items are products and packaging that we throw out after only one use. These items are used for only minutes but their impact on our environment can last thousands of years.Nowadays,a lot of companies such as Starbucks are turning plastic straws into paper straws. Doing something little could make a huge difference to the world.
+
+The Survey I have chosen is about single-use and takeaway items.It also includes investigation on plastic bags, disposable coffee cups, paper bags and so on. Since I want to focus mainly on the reduction of plastic straws, I would like to choose the subset of the dataset which focus on the frequency they use plastic straws and how likely they will use reusable straws. I have found that quite a huge amount of people will use plastic straws. However, if they are given the choice of using reusable straws, they are most likely to use the reusable straws.
+
+Since straws are most likely to be used in the stores mainly for drinks, some places won't use straws as that much.THis could affect on the results. We should specify on that and make surveys on the target group. 
+Also, more related data and models are needed for the analysis.
+
