@@ -66,7 +66,7 @@ ggplot(data=dataset, aes(reusable.straws),) +
 
 
 ```{r ，message=FALSE, warning=FALSE}
-reason <- dataset$
+reason <- dataset$`3.5. It is a hassle to carry reusable items with me`
 table(reason)
 ```
 #It is interesting to see that there are 4451 responses of the 20000 responses show that it is a hassle to carry reusable items with them. 
