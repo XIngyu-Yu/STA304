@@ -2,12 +2,10 @@
 title: "Analysis on the use of plastic straws and willingness to change"
 author: "Xingyu Yu"
 date: "26/09/2020"
-abstract: we have explored the data of feedback on how to reduce plastic straws. Aslongasthe
-  topic about climate change has brought to people's attention, finding approachesto
-  reduce single-use items is very important.
+abstract: we have explored the data of feedback on how to reduce plastic straws. Aslongasthetopic about climate change has brought to people's attention, finding approachestoreduce single-use items is very important.
 categories: R
 bibliography: references
-tags:[" R Markdown", "plot", "regression"]
+tags: [" R Markdown", "plot", "regression"]
 ---
 #code and data supporting this analysis is available at: https://github.com/XIngyu-Yu/STA304
 
