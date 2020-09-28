@@ -2,20 +2,20 @@
 title: "Analysis on the use of plastic straws and willingness to change"
 author: "Xingyu Yu"
 date: "26/09/2020"
-abstract: we have explored the data of feedback on how to reduce plastic straws. Aslong as the topic about climate change has brought to people's attention, finding approaches to reduce single-use items is very important.
+abstract: we have explored the data of feedback on how to reduce plastic straws. Aslongasthe
+  topic about climate change has brought to people's attention, finding approachesto
+  reduce single-use items is very important.
 categories: R
 bibliography: references
-tags: [" R Markdown", "plot" , "regression"] 
-
+tags:[" R Markdown", "plot", "regression"]
 ---
+#code and data supporting this analysis is available at: https://github.com/XIngyu-Yu/STA304
 
-code and data supporting this analysis is available at: https://github.com/XIngyu-Yu/STA304
+#We use R @citeR and ggplot @ggplot2 for the analysis.
 
-We use R @citeR and ggplot @ggplot2 for the analysis.
+#I manually download dataset and then read it in from a local file. 
 
-I manually download dataset and then read it in from a local file. 
-
-```{r setup, include=FALSE}
+```{r, setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 install.packages("opendatatoronto")
 install.packages("single_use_takeaway_items_stage_1_1_")
