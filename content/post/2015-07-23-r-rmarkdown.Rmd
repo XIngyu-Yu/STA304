@@ -1,7 +1,7 @@
 ---
 title: "Analysis on the use of plastic straws and willingness to change"
 author: "Xingyu Yu"
-date: 2015-07-23T21:13:14-05:00
+date: "26/09/2020"
 categories: ["R"]
 bibliography:"references"
 tags: ["R Markdown", "plot", "regression"]
@@ -13,9 +13,12 @@ We use R @citeR and ggplot @ggplot2 for the analysis.
 
 I manually download dataset and then read it in from a local file. 
 
-#Abstract:
-
-we have explored the data of feedback on how to reduce plastic straws. As long as the topic about climate change has brought to people's attention, finding approaches to reduce single-use items is very important.
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("opendatatoronto")
+install.packages("single_use_takeaway_items_stage_1_1_")
+install.packages("ggplot2")
+```
 
 #introduction
 Single-use items are products and packaging that we throw out after only one use. These items are used for only minutes but their impact on our environment can last thousands of years.Nowadays,a lot of companies such as Starbucks are turning plastic straws into paper straws. Doing something little could make a huge difference to the world.
@@ -25,3 +28,74 @@ The Survey I have chosen is about single-use and takeaway items.It also includes
 Since straws are most likely to be used in the stores mainly for drinks, some places won't use straws as that much.THis could affect on the results. We should specify on that and make surveys on the target group. 
 Also, more related data and models are needed for the analysis.
 
+
+
+
+#Data discussion
+
+This dataset includes responses from this public survey.It is about people's habbits of using single-use items and approaches to reduce the use. The Online Survey was available from September 20, 2018 to October 28, 2018 and last refreshed on Sept 13,2019. It received approximately 20,000 responses.
+A single-use or takeaway item is any product designed for a single use after which is it disposed of.
+
+
+```{r ，message=FALSE, warning=FALSE}
+dataset <- read.csv('single_use_takeaway_items_stage_1_1_.csv')
+plastic.straws <- dataset$X2.8..Plastic.Straws
+reusable.straws <- dataset$X4.5..Reusable.straws..instead.of.disposable.straws
+table(plastic.straws)
+
+```
+
+This is the table about the coundt of frequency about using plastic straws.
+
+```{r}
+library(ggplot2)
+ggplot(data=dataset, aes(plastic.straws),) + 
+  geom_bar()
+```
+#From the graph, we can obviously see that the frequency of People/retailer using plastic straws are quite often. Also, people/retailer using plastic straws everyday is also a considerable quantity.
+```{r}
+table(reusable.straws)
+```
+This is the table of count about people's different willingness about using reusable straws.
+
+
+```{r}
+library(ggplot2)
+ggplot(data=dataset, aes(reusable.straws),) + 
+  geom_bar()
+```
+#We can see from the graph that more than 10000 responses show that they are very likely to use reusable straws instead of plastic straws. 
+
+
+```{r ，message=FALSE, warning=FALSE}
+reason <- dataset$X3.5..It.is.a.hassle.to.carry.reusable.items.with.me
+table(reason)
+```
+#It is interesting to see that there are 4451 responses of the 20000 responses show that it is a hassle to carry reusable items with them. 
+
+#Graph discussion
+From the two bar plots I have drawn above, We can compare the amount of different people/retailers' habits of using plastic straws and their willingness of change to reusable straws.We can also see the modes of the graphs. For example, most people use plastic straws a couple of times every month. Most people are very likely to use reusable straws if supplied the option.
+
+#Discussion
+
+Using plastic straws is a normal thing in people's daily life. Even though not necessarily for everyday, most people will somehow use plastic straws. 
+
+However, just as the data shown above, most people are willing to do some changes if they are offered the option of reusable straws. Futhermore, there are already some organizations start to use the reusable straws.In other words,the number of using reusable straws will increase.
+
+It is also brought to me attention that around 1/4 of the population choose the response that "It is a hassel for them to carry reusable items with them." This is a interesting finding which we can see people's thoughts about carry resuable items. More investigation could be down in this part.
+
+There are some people who choose not to answer, which can be understand. Due to the reason that not all the retailers need to use straws. Therefore, a further survey should be conducted on this topic specifically.
+
+#Weakness and next steps
+1. Since the large amount of straws being used are specific group, some groups which do not need using the straws may affect the result. In this aspect, we should do a further survey on the group which use straws as part of their service.
+
+2. Since there are also many other choices of single-use items to choose, people may not only choose plastic straws compared to things like plastic bags.
+
+For the next steps:
+1. Have a depper survey on usage of plastic straws.
+2. Build up a linear model to show the relationship.
+
+#Reference
+ustainability.vic.gov.au. 2020. The Single-Use Items That Are Best Avoided. [online] Available at: <https://www.sustainability.vic.gov.au/You-and-your-home/Live-sustainably/Single-use-items#:~:text=Single%2Duse%20items%20or%20disposable,can%20last%20thousands%20of%20years.> [Accessed 27 September 2020].
+
+Open Data Dataset. (n.d.). Retrieved September 27, 2020, from https://open.toronto.ca/dataset/reducing-single-use-and-takeaway-items-phase-1-consultation/ publisher:Solid Waste Management Services
