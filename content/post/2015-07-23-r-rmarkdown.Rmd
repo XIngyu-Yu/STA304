@@ -38,11 +38,9 @@ A single-use or takeaway item is any product designed for a single use after whi
 
 
 ```{r ，message=FALSE, warning=FALSE}
-dataset <- read.csv('single_use_takeaway_items_stage_1_1_.csv')
-plastic.straws <- dataset$X2.8..Plastic.Straws
-reusable.straws <- dataset$X4.5..Reusable.straws..instead.of.disposable.straws
-table(plastic.straws)
-
+dataset <- single_use_takeaway_items_stage_1
+plastic.straws <- dataset$`2.8. Plastic Straws`
+reusable.straws <- dataset$`4.5. Reusable straws, instead of disposable straws`
 ```
 
 This is the table about the coundt of frequency about using plastic straws.
@@ -68,7 +66,7 @@ ggplot(data=dataset, aes(reusable.straws),) +
 
 
 ```{r ，message=FALSE, warning=FALSE}
-reason <- dataset$X3.5..It.is.a.hassle.to.carry.reusable.items.with.me
+reason <- dataset$
 table(reason)
 ```
 #It is interesting to see that there are 4451 responses of the 20000 responses show that it is a hassle to carry reusable items with them. 
